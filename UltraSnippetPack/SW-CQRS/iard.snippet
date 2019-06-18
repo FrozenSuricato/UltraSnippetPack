@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets-schema-reference?view=vs-2019">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>iard</Title>
+			<Shortcut>iard</Shortcut>
+			<Description>Snippet de código para um IActionResult Delete com HttpDelete</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>vmNameGeral</ID>
+					<ToolTip>Nome da View Model recebida</ToolTip>
+					<Default>MyVM</Default>
+				</Literal>
+                <Literal>
+					<ID>vmName</ID>
+					<ToolTip>Nome da View Model parametro</ToolTip>
+					<Default>MyVM</Default>
+				</Literal>
+                <Literal>
+					<ID>varName</ID>
+					<ToolTip>Nome da variavel parametro 1</ToolTip>
+					<Default>MyVar</Default>
+				</Literal>
+				<Literal>
+					<ID>prop</ID>
+					<ToolTip>tipo da variavel 2</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>varName2</ID>
+					<ToolTip>Nome da variavel parametro 2</ToolTip>
+					<Default>MyVar2</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				[HttpDelete]
+        		[ProducesResponseType(typeof($vmNameGeral$), StatusCodes.Status202Accepted)]
+        		public IActionResult Delete($vmName$ $varName$, $prop$ $varName2$)
+        		{
+            		if (!ModelState.IsValid)
+            		{
+                		NotifyModelStateErrors();
+                		return Response($varName$);
+            		}
+
+            		_service.Delete($varName$, $varName2$);
+
+            		return Accepted();
+        		}				
+				$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

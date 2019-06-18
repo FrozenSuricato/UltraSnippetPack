@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>cht</Title>
+			<Shortcut>cht</Shortcut>
+			<Description>Snippet de código para um command handler task publico</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>commandName</ID>
+					<ToolTip>Nome do Comando</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				public Task<bool> Handle($commandName$ message, CancellationToken cancellationToken)
+				    {
+            			if (!message.IsValid())
+            			{
+                			NotifyValidationErrors(message);
+                			return Task.FromResult(false);
+            			}
+
+						/*SEU CODIGO AQUI*/         
+
+            			if (Commit())
+            			{
+               			 //Bus.RaiseEvent(); /*Chamada para um evento aqui */
+            			}
+
+            			return Task.FromResult(true);
+        			}				
+				$end$]]>
+			</Code>
+			<Imports>
+        		<Import>
+          		<Namespace>BancoQuestoes.Domain.Commands</Namespace>
+        		</Import>
+      		</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
