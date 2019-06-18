@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>isvalid</Title>
+			<Shortcut>isvalid</Shortcut>
+			<Description>Snippet de código para um metodo IsValid padrão SW-CQRS</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>nome do command validation</ToolTip>
+					<Default>MyCommandValidation</Default>
+				</Literal>                
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				 public override bool IsValid()
+        		{
+            		ValidationResult = new $name$().Validate(this);
+            		return ValidationResult.IsValid;
+        		}			
+				$end$]]>
+			</Code>
+			<Import>
+    		<Namespace>BancoQuestoes.Domain.Validations</Namespace>
+			</Import>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

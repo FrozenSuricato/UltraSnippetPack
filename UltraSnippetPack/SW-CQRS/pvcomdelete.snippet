@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>pvcomdelete</Title>
+			<Shortcut>pvcomdelete</Shortcut>
+			<Description>Snippet de código para um public void Method (DeleteCommand)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Nome do metodo</ToolTip>
+					<Default>Delete</Default>
+				</Literal>
+				<Literal>
+					<ID>tipo</ID>
+					<ToolTip>Nome do tipo ID</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>paramVar</ID>
+					<ToolTip>Nome da variavel de parametro</ToolTip>
+					<Default>Id</Default>
+				</Literal>
+				<Literal>
+					<ID>comTipo</ID>
+					<ToolTip>Nome do tipo de comando</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+				<Literal>
+					<ID>comVar</ID>
+					<ToolTip>Nome da variavel de comando</ToolTip>
+					<Default>MyCommandVar</Default>
+				</Literal>
+				<Literal>
+					<ID>idComVar</ID>
+					<ToolTip>Nome da variavel de ID do comando</ToolTip>
+					<Default>Id</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				public void $name$($tipo$ $paramVar$)
+        		{
+           			$comTipo$ $comVar$ = new $comTipo$($idComVar$: int.Parse($paramVar$));
+            		_bus.SendCommand($comVar$);
+        		}				
+				$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

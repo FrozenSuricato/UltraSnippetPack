@@ -17,40 +17,20 @@
 					<ToolTip>Nome da View Model recebida</ToolTip>
 					<Default>MyVM</Default>
 				</Literal>
-                <Literal>
-					<ID>vmName</ID>
-					<ToolTip>Nome da View Model parametro</ToolTip>
-					<Default>MyVM</Default>
-				</Literal>
-                <Literal>
-					<ID>varName</ID>
-					<ToolTip>Nome da variavel parametro 1</ToolTip>
-					<Default>MyVar</Default>
-				</Literal>
-				<Literal>
-					<ID>prop</ID>
-					<ToolTip>tipo da variavel 2</ToolTip>
-					<Default>string</Default>
-				</Literal>
-				<Literal>
-					<ID>varName2</ID>
-					<ToolTip>Nome da variavel parametro 2</ToolTip>
-					<Default>MyVar2</Default>
-				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[
-				[HttpDelete]
+				[HttpDelete("{id}")]
         		[ProducesResponseType(typeof($vmNameGeral$), StatusCodes.Status202Accepted)]
-        		public IActionResult Delete($vmName$ $varName$, $prop$ $varName2$)
+        		public IActionResult Delete(string id)
         		{
             		if (!ModelState.IsValid)
             		{
                 		NotifyModelStateErrors();
-                		return Response($varName$);
+                		return Response(id);
             		}
 
-            		_service.Delete($varName$, $varName2$);
+            		_service.Delete(id);
 
             		return Accepted();
         		}				

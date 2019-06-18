@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>pvcomupdate</Title>
+			<Shortcut>pvcomupdate</Shortcut>
+			<Description>Snippet de código para um public void Method (UpdateCommand)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Nome do metodo</ToolTip>
+					<Default>Update</Default>
+				</Literal>
+				<Literal>
+					<ID>tipo</ID>
+					<ToolTip>Nome do tipo ID</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>paramVar</ID>
+					<ToolTip>Nome da variavel de parametro</ToolTip>
+					<Default>Id</Default>
+				</Literal>
+				<Literal>
+					<ID>vmName</ID>
+					<ToolTip>Nome da ViewModelParametro</ToolTip>
+					<Default>MyVM</Default>
+				</Literal>
+				<Literal>
+					<ID>varName</ID>
+					<ToolTip>Nome da variavel</ToolTip>
+					<Default>MyVMVar</Default>
+				</Literal>				
+				<Literal>
+					<ID>comType</ID>
+					<ToolTip>Nome do tipo comando</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+				<Literal>
+					<ID>comVar</ID>
+					<ToolTip>Nome da variavel de comando</ToolTip>
+					<Default>MyCommandVar</Default>
+				</Literal>
+				<Literal>
+					<ID>comID</ID>
+					<ToolTip>Nome da variavel de ID do comando</ToolTip>
+					<Default>Id</Default>
+				</Literal>			
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				public void $name$($tipo$ $paramVar$, $vmName$ $varName$)
+        		{
+           			var $comVar$ = _mapper.Map<$comType$>($varName$);
+					$comVar$.$comID$ = int.Parse($paramVar$);
+            		_bus.SendCommand($comVar$);
+        		}				
+				$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

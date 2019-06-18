@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>iarc</Title>
-			<Shortcut>iarc</Shortcut>
-			<Description>Snippet de código para um IActionResult Create com HttpPost</Description>
+			<Title>pvcom</Title>
+			<Shortcut>pvcom</Shortcut>
+			<Description>Snippet de código para um public void Method (command)</Description>
 			<Author>João Victor Botelho Gonçalves</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -13,13 +13,13 @@
 		<Snippet>
 			<Declarations>
 				<Literal>
-					<ID>vmNameGeral</ID>
-					<ToolTip>Nome da View Model recebida</ToolTip>
-					<Default>MyVM</Default>
+					<ID>name</ID>
+					<ToolTip>Nome do metodo</ToolTip>
+					<Default>Create</Default>
 				</Literal>
                 <Literal>
 					<ID>vmName</ID>
-					<ToolTip>Nome da View Model parametro</ToolTip>
+					<ToolTip>Nome da View Model Tipo parametro</ToolTip>
 					<Default>MyVM</Default>
 				</Literal>
                 <Literal>
@@ -27,22 +27,23 @@
 					<ToolTip>Nome da variavel parametro</ToolTip>
 					<Default>MyVar</Default>
 				</Literal>
+				<Literal>
+					<ID>comType</ID>
+					<ToolTip>Nome do tipo comando</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+				<Literal>
+					<ID>comVar</ID>
+					<ToolTip>Nome da variavel de comando</ToolTip>
+					<Default>MyCommandVar</Default>
+				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[
-				[HttpPost]
-        		[ProducesResponseType(typeof($vmNameGeral$), StatusCodes.Status202Accepted)]
-        		public IActionResult Create([FromBody]$vmName$ $varName$)
+				public void $name$($vmName$ $varName$)
         		{
-            		if (!ModelState.IsValid)
-            		{
-                		NotifyModelStateErrors();
-                		return Response($varName$);
-            		}
-
-            		_service.Create($varName$);
-
-            		return Accepted();
+           			var $comVar$ = _mapper.Map<$comType$>($varName$);
+            		_bus.SendCommand($comVar$);
         		}				
 				$end$]]>
 			</Code>
