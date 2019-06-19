@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>pubComGet</Title>
+			<Shortcut>pubComGet</Shortcut>
+			<Description>Snippet de código para um public  Method (GetCommand)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Nome do metodo</ToolTip>
+					<Default>Get</Default>
+				</Literal>
+                <Literal>
+					<ID>vmName</ID>
+					<ToolTip>Nome da View Model</ToolTip>
+					<Default>MyViewModel</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[
+				public IEnumerable<$vmName$> $name$()
+        		{
+            		return _repository.Query().ProjectTo<$vmName$>(_mapper.ConfigurationProvider);
+        		}
+				$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

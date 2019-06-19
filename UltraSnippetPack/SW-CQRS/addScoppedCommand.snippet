@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>addScopedCommand</Title>
+			<Shortcut>addScopedCommand</Shortcut>
+			<Description>Snippet de código para um services.AddScoped de command</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>command</ID>
+					<ToolTip>Nome do coamdno</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+				<Literal>
+					<ID>commandHandler</ID>
+					<ToolTip>Nome do CommandHandler</ToolTip>
+					<Default>MyCommandHandler</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[services.AddScoped<IRequestHandler<$command$, bool>, $commandHandler$>();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

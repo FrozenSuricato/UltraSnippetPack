@@ -19,8 +19,7 @@
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-				<![CDATA[
-				public Task<bool> Handle($commandName$ message, CancellationToken cancellationToken)
+				<![CDATA[public Task<bool> Handle($commandName$ message, CancellationToken cancellationToken)
 				    {
             			if (!message.IsValid())
             			{
@@ -28,7 +27,11 @@
                 			return Task.FromResult(false);
             			}
 
-						/*SEU CODIGO AQUI*/         
+						//*** \/ SEU CODIGO AQUI [APAGAR O NotImplementedException AO DESENVOLVER] \/***
+
+            			throw new NotImplementedException();
+
+            			//*** /\ SEU CODIGO AQUI [APAGAR O NotImplementedException AO DESENVOLVER] /\***         
 
             			if (Commit())
             			{
