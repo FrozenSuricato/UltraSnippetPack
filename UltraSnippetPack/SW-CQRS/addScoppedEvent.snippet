@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AddScopedEvent</Title>
+			<Shortcut>AddScopedEvent</Shortcut>
+			<Description>Snippet de código para um services.AddScoped de Event</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>event</ID>
+					<ToolTip>Nome do evento</ToolTip>
+					<Default>MyEvent</Default>
+				</Literal>
+				<Literal>
+					<ID>eventHandler</ID>
+					<ToolTip>Nome do EventHandler</ToolTip>
+					<Default>MyEventHandler</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[services.AddScoped<INotificationHandler<$event$>, $eventHandler$>();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

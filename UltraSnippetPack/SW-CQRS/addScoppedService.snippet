@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AddScopedService</Title>
+			<Shortcut>AddScopedService</Shortcut>
+			<Description>Snippet de código para um services.AddScoped de service</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>IService</ID>
+					<ToolTip>Nome da interface de Service</ToolTip>
+					<Default>IMyService</Default>
+				</Literal>
+				<Literal>
+					<ID>service</ID>
+					<ToolTip>Nome da Service</ToolTip>
+					<Default>MyService</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[services.AddScoped<$IService$, $service$>();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
