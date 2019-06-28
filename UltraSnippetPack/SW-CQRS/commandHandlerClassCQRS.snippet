@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>commandHandlerClassCQRS</Title>
+			<Shortcut>commandHandlerClassCQRS</Shortcut>
+			<Description>Snippet de código para uma classe (CommandHandler Padrão CQRS)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>ClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>ClassCommandHandler</Default>
+				</Literal>
+				<Literal>
+					<ID>irepository</ID>
+					<ToolTip>Nome da interface repository</ToolTip>
+					<Default>IRepository</Default>
+				</Literal>
+				<Literal>
+					<ID>repVar</ID>
+					<ToolTip>Nome da variavel de repository</ToolTip>
+					<Default>repository</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[public class $ClassName$ : CommandHandler
+						{
+							private readonly $irepository$ _$repVar$;
+							private readonly IMediatorHandler Bus;
+
+							public $ClassName$(
+														$irepository$ $repVar$,
+														IUnitOfWork uow,
+														IMediatorHandler bus,
+														INotificationHandler<DomainNotification> notifications) : base(uow, bus, notifications)
+							{
+								_$repVar$ = $repVar$;
+								Bus = bus;
+							}
+
+							
+							public void Dispose()
+							{
+								_$repVar$.Dispose();
+							}
+						}
+				$end$]]>
+			</Code>			
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

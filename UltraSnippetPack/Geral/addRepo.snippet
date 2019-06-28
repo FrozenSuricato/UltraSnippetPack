@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets-schema-reference?view=vs-2019">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>addRepo</Title>
+			<Shortcut>addRepo</Shortcut>
+			<Description>Snippet de código para adicionar um IRepository</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>repoName</ID>
+					<ToolTip>Nome do IRepository</ToolTip>
+					<Default>IMyRepo</Default>
+				</Literal>
+                <Literal>
+					<ID>varName</ID>
+					<ToolTip>Nome da variavel</ToolTip>
+					<Default>_myRepo</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[private readonly $repoName$ $varName$;$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

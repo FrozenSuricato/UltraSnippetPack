@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>appServiceClassCQRS</Title>
+			<Shortcut>appServiceClassCQRS</Shortcut>
+			<Description>Snippet de código para uma classe (AppService)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>appServiceClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>ClassAppService</Default>
+				</Literal>>
+				<Literal>
+					<ID>clasRepository</ID>
+					<ToolTip>Nome da classe Respository</ToolTip>
+					<Default>repository</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[public class $appServiceClassName$ : I$appServiceClassName$
+						{
+							private readonly I$clasRepository$ _repository;
+							private readonly IAuthService _serviceAuth;
+							private readonly IMapper _mapper;
+							private readonly IEventStoreRepository _eventStoreRepository;
+							private readonly IMediatorHandler _bus;
+
+							public $appServiceClassName$(I$clasRepository$ repository,
+													IMapper mapper,
+													IAuthService serviceEzAuth,
+													IEventStoreRepository eventStoreRepository,
+													IMediatorHandler bus)
+							{
+								_repository = repository;
+								_mapper = mapper;
+								_serviceAuth = serviceEzAuth;
+								_eventStoreRepository = eventStoreRepository;
+								_bus = bus;
+							}
+
+						}
+				$end$]]>
+			</Code>			
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>validationClass</Title>
+			<Shortcut>validationClass</Shortcut>
+			<Description>Snippet de código para uma classe (Validation)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>validationClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>CreateClassValidation</Default>
+				</Literal>>
+				<Literal>
+					<ID>refCommand</ID>
+					<ToolTip>Nome da classe pai de commando</ToolTip>
+					<Default>ClassCommand</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[public abstract class $validationClassName$<T> : AbstractValidator<T> where T: $refCommand$
+    					{
+
+    					}
+				$end$]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>
+						FluentValidation;
+					</Namespace>
+				</Import>
+				<Import>
+					<Namespace>
+						BancoQuestoes.Domain.Commands;
+					</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

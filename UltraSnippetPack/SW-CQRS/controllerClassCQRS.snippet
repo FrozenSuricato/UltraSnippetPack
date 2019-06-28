@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>controllerClassCQRS</Title>
+			<Shortcut>controllerClassCQRS</Shortcut>
+			<Description>Snippet de código para uma classe (Controller Padrão CQRS)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>controllerClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>ClassController</Default>
+				</Literal>
+				<Literal>
+					<ID>iappservice</ID>
+					<ToolTip>Nome da interface app service</ToolTip>
+					<Default>IAppService</Default>
+				</Literal>
+				<Literal>
+					<ID>route</ID>
+					<ToolTip>Nome da rota</ToolTip>
+					<Default>route</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[[AllowAnonymous, Route("$route$"), ApiController]
+							public class $controllerClassName$ : ApiController
+							{
+								private readonly $iappservice$ _service;
+
+								public $controllerClassName$($iappservice$ service,
+								INotificationHandler<DomainNotification> notifications,
+								IMediatorHandler mediator) : base(notifications, mediator)
+								{
+									_service = service;
+								}        
+
+							}
+				$end$]]>
+			</Code>			
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>deleteCommandClass</Title>
+			<Shortcut>deleteCommandClass</Shortcut>
+			<Description>Snippet de código para uma classe (DeleteCommand)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>commandClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>DeleteClassCommand</Default>
+				</Literal>>
+				<Literal>
+					<ID>commandClassPai</ID>
+					<ToolTip>Nome da classe pai que vai ser herdada pelo commando</ToolTip>
+					<Default>ClassCommand</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[using BancoQuestoes.Domain.Validations;
+
+				namespace BancoQuestoes.Domain.Commands
+				{
+    				public class $commandClassName$ : $commandClassPai$
+    				{
+					    protected int Id { get; private set; }
+						
+        				public $commandClassName$(int id)
+        				{
+            			Id = id;
+        				}
+
+						public override bool IsValid()
+						{
+						ValidationResult = new $commandClassName$Validation().Validate(this);
+						return ValidationResult.IsValid;
+						}
+
+    				}
+				}	
+				$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
