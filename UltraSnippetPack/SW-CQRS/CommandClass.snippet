@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CommandClass</Title>
+			<Shortcut>CommandClass</Shortcut>
+			<Description>Snippet de código para uma classe (GenericCommand)</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>commandClassName</ID>
+					<ToolTip>Nome da classe</ToolTip>
+					<Default>CreateClassCommand</Default>
+				</Literal>>
+				<Literal>
+					<ID>commandClassPai</ID>
+					<ToolTip>Nome da classe pai que vai ser herdada pelo commando</ToolTip>
+					<Default>ClassCommand</Default>
+				</Literal>>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[public class $commandClassName$ : $commandClassPai$
+    					{
+        					public override bool IsValid()
+        					{
+								ValidationResult = new $commandClassName$Validation().Validate(this);
+								return ValidationResult.IsValid;
+        					}
+						}
+				$end$]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>
+						BancoQuestoes.Domain.Validations;
+					</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

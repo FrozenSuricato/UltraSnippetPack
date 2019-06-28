@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>addIRequestHandler</Title>
+			<Shortcut>addIRequestHandler</Shortcut>
+			<Description>Snippet de código para um IRequestHandler a ser importado no CommandHandler</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>commandName</ID>
+					<ToolTip>Nome do comando</ToolTip>
+					<Default>MyCommand</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[IRequestHandler<$commandName$, bool>$end$]]>
+			</Code>			
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

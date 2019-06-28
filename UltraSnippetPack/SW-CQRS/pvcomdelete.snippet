@@ -20,7 +20,7 @@
 				<Literal>
 					<ID>tipo</ID>
 					<ToolTip>Nome do tipo ID</ToolTip>
-					<Default>string</Default>
+					<Default>int</Default>
 				</Literal>
 				<Literal>
 					<ID>paramVar</ID>
@@ -37,17 +37,12 @@
 					<ToolTip>Nome da variavel de comando</ToolTip>
 					<Default>MyCommandVar</Default>
 				</Literal>
-				<Literal>
-					<ID>idComVar</ID>
-					<ToolTip>Nome da variavel de ID do comando</ToolTip>
-					<Default>Id</Default>
-				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[
 				public void $name$($tipo$ $paramVar$)
         		{
-           			$comTipo$ $comVar$ = new $comTipo$($idComVar$ int.Parse($paramVar$));
+           			$comTipo$ $comVar$ = new $comTipo$(id: $paramVar$);
             		_bus.SendCommand($comVar$);
         		}				
 				$end$]]>

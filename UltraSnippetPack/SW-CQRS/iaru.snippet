@@ -4,7 +4,7 @@
 		<Header>
 			<Title>iaru</Title>
 			<Shortcut>iaru</Shortcut>
-			<Description>Snippet de código para um IActionResult Update com HttpPut</Description>
+			<Description>Snippet de código para um IActionResult Update com HttpPut (Padrão CQRS)</Description>
 			<Author>João Victor Botelho Gonçalves</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -27,12 +27,17 @@
 					<ToolTip>Nome da variavel parametro 1</ToolTip>
 					<Default>MyVar</Default>
 				</Literal>
+				<Literal>
+					<ID>tipo</ID>
+					<ToolTip>tipo da variavel id</ToolTip>
+					<Default>int</Default>
+				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[
 				[HttpPut("{id}")]
         		[ProducesResponseType(typeof($vmNameGeral$), StatusCodes.Status202Accepted)]
-        		public IActionResult Update(string id, [FromBody]$vmName$ $varName$)
+        		public IActionResult Update($tipo$ id, [FromBody]$vmName$ $varName$)
         		{
             		if (!ModelState.IsValid)
             		{

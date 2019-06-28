@@ -17,12 +17,17 @@
 					<ToolTip>Nome da View Model recebida</ToolTip>
 					<Default>MyVM</Default>
 				</Literal>
+				<Literal>
+					<ID>tipo</ID>
+					<ToolTip>tipo da variavel ID</ToolTip>
+					<Default>int</Default>
+				</Literal>
 			</Declarations>
 			<Code Language="csharp">
 				<![CDATA[
 				[HttpDelete("{id}")]
         		[ProducesResponseType(typeof($vmNameGeral$), StatusCodes.Status202Accepted)]
-        		public IActionResult Delete(string id)
+        		public IActionResult Delete($tipo$ id)
         		{
             		if (!ModelState.IsValid)
             		{

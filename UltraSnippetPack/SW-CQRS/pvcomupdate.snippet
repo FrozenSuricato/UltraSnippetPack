@@ -20,7 +20,7 @@
 				<Literal>
 					<ID>tipo</ID>
 					<ToolTip>Nome do tipo ID</ToolTip>
-					<Default>string</Default>
+					<Default>int</Default>
 				</Literal>
 				<Literal>
 					<ID>paramVar</ID>
@@ -58,7 +58,7 @@
 				public void $name$($tipo$ $paramVar$, $vmName$ $varName$)
         		{
            			var $comVar$ = _mapper.Map<$comType$>($varName$);
-					$comVar$.$comID$ = int.Parse($paramVar$);
+					$comVar$.$comID$ = $paramVar$;
             		_bus.SendCommand($comVar$);
         		}				
 				$end$]]>
