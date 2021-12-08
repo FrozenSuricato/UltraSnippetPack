@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets-schema-reference?view=vs-2019">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>StopWatch StartNew</Title>
+			<Shortcut>swsn</Shortcut>
+			<Description>Snippet de código para adicionar uma variavel que recebe Stopwatch.StartNew();</Description>
+			<Author>João Victor Botelho Gonçalves</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+					<ID>varName</ID>
+					<ToolTip>Nome da variavel</ToolTip>
+					<Default>newStopwatch</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[var $varName$ = Stopwatch.StartNew();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
